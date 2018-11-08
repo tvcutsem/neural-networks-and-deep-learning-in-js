@@ -1,0 +1,27 @@
+{
+  "name": "neural-networks-and-deep-learning-js",
+  "version": "0.0.1",
+  "private": true,
+  "description": "neural networks and deep learning in JavaScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "check": "npx tslint *.ts"
+  },
+  "author": "Tom Van Cutsem",
+  "license": "MIT",
+  "dependencies": {
+    "jsboxmuller": "^1.1.1",
+    "numjs": "^0.16.0",
+    "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.2",
+    "@types/numjs": "^0.14.4",
+    "@types/shuffle-array": "0.0.28",
+    "source-map-support": "^0.5.9",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
