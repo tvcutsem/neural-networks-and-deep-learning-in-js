@@ -1,3 +1,9 @@
+/**
+ * A port of Michael Nielsen's neural network Python code to TypeScript.
+ * Original code: <https://github.com/mnielsen/neural-networks-and-deep-learning/blob/master/src/network.py>
+ *
+ * @author Tom Van Cutsem
+ */
 import * as nj from "numjs";
 import * as shuffle from "shuffle-array";
 import {argmax, randn, zip} from "./extras";
@@ -95,9 +101,6 @@ export class Network {
           nablaB = zip(nablaB, deltaNablaB).map(([nb, dnb]) => nb.add(dnb));
           nablaW = zip(nablaW, deltaNablaW).map(([nw, dnw]) => nw.add(dnw));
       }
-
-      // let miniBatchLenArr = nj.zeros(miniBatch[0][0].shape).add(miniBatch.length);
-
       this.weights = zip(this.weights, nablaW).map(([w, nw]) => {
           // w' = w - (eta/miniBatch.length) * nw
           return w.subtract(nw.multiply(eta / miniBatch.length));
