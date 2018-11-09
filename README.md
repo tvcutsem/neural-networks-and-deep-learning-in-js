@@ -47,46 +47,47 @@ Run the code (this trains a neural net that recognizes handwritten digits):
 npm start
 ```
 
-Example output:
+Example output for training MNIST on 50K training samples using a simple 784x30x10 feed-forward network:
 
 ```
 Running node v10.13.0 (npm v6.4.1)
-# training samples = 49999
-# validation samples = 9999
-# test samples = 9999
-Epoch 0: 8227 / 9999
-Epoch 1: 8316 / 9999
-Epoch 2: 9294 / 9999
-Epoch 3: 9319 / 9999
-Epoch 4: 9326 / 9999
-Epoch 5: 9369 / 9999
-Epoch 6: 9407 / 9999
-Epoch 7: 9357 / 9999
-Epoch 8: 9392 / 9999
-Epoch 9: 9378 / 9999
-Epoch 10: 9420 / 9999
-Epoch 11: 9399 / 9999
-Epoch 12: 9427 / 9999
-Epoch 13: 9436 / 9999
-Epoch 14: 9436 / 9999
-Epoch 15: 9411 / 9999
-Epoch 16: 9437 / 9999
-Epoch 17: 9454 / 9999
-Epoch 18: 9436 / 9999
-Epoch 19: 9436 / 9999
-Epoch 20: 9472 / 9999
-Epoch 21: 9443 / 9999
-Epoch 22: 9457 / 9999
-Epoch 23: 9438 / 9999
-Epoch 24: 9458 / 9999
-Epoch 25: 9452 / 9999
-Epoch 26: 9468 / 9999
-Epoch 27: 9462 / 9999
-Epoch 28: 9448 / 9999
-Epoch 29: 9433 / 9999
+# training samples = 50000
+# validation samples = 10000
+# test samples = 10000
+Init: 1147 / 10000
+Epoch 0: 8993 / 10000
+Epoch 1: 9143 / 10000
+Epoch 2: 9264 / 10000
+Epoch 3: 9281 / 10000
+Epoch 4: 9343 / 10000
+Epoch 5: 9348 / 10000
+Epoch 6: 9333 / 10000
+Epoch 7: 9417 / 10000
+Epoch 8: 9328 / 10000
+Epoch 9: 9429 / 10000
+Epoch 10: 9407 / 10000
+Epoch 11: 9398 / 10000
+Epoch 12: 9428 / 10000
+Epoch 13: 9429 / 10000
+Epoch 14: 9455 / 10000
+Epoch 15: 9466 / 10000
+Epoch 16: 9476 / 10000
+Epoch 17: 9444 / 10000
+Epoch 18: 9457 / 10000
+Epoch 19: 9466 / 10000
+Epoch 20: 9464 / 10000
+Epoch 21: 9482 / 10000
+Epoch 22: 9445 / 10000
+Epoch 23: 9469 / 10000
+Epoch 24: 9480 / 10000
+Epoch 25: 9453 / 10000
+Epoch 26: 9463 / 10000
+Epoch 27: 9473 / 10000
+Epoch 28: 9470 / 10000
+Epoch 29: 9461 / 10000
 ```
 
-The code prints out the accuracy of the neural net on a test-set of 10K examples. The above network achieves a final classification accuracy on the test set of 94.33% (9433 out of 9999 examples classified correctly).
+The code prints out the accuracy of the neural net on a test-set of 10K examples. The above network achieves a final classification accuracy on the test set of 94.61% (9461 out of 10000 examples classified correctly).
 
 For details, read [chapter 1](http://neuralnetworksanddeeplearning.com/chap1.html) of Nielsen's book.
 
