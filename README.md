@@ -102,7 +102,7 @@ I was surpised to find that the JavaScript code runs quite a bit slower than the
 
 That's a factor 6.8x slowdown compared to the Python code.
 
-I conjecture that this is mostly due to NumPy N-d arrays being far more optimized than NumJS N-d arrays (even though NumJS also uses native bindings to perform vector arithmetic).
+I conjecture that this is mostly due to NumPy N-d arrays being far more optimized than NumJS N-d arrays (even though NumJS ndarrays also use [clever tricks](http://mikolalysenko.github.io/ndarray-presentation/) to efficiently represent vectors in JavaScript).
 
 ## License
 
