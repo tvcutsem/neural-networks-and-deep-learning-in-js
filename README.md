@@ -104,6 +104,9 @@ That's a factor 6.8x slowdown compared to the Python code.
 
 I conjecture that this is mostly due to NumPy N-d arrays being far more optimized than NumJS N-d arrays (even though NumJS ndarrays also use [clever tricks](http://mikolalysenko.github.io/ndarray-presentation/) to efficiently represent vectors in JavaScript).
 
+A small microbenchmark seems to confirm this: running a tight loop of
+multiplying a 784x30 by a 30x1 ndarray 10K times takes on the order of 700 milliseconds in JS/numjs and on the order of 65 milliseconds in Python/numpy, a 10x performance difference.
+
 ## License
 
 MIT

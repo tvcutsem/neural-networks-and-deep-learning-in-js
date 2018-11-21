@@ -24,7 +24,7 @@ function loadNDJSON(filename: string): Promise<Array<MNISTExampleInput>> {
       try {
         let [inputImg, result] = JSON.parse(line);
         entries.push([
-          nj.array(inputImg),
+          nj.array(inputImg, "float32"),
           result ]);
       } catch (e) {
         reject(e);
@@ -38,7 +38,7 @@ function loadNDJSON(filename: string): Promise<Array<MNISTExampleInput>> {
 }
 
 function vectorize(j: number): nj.NdArray<number> {
-  let vec = nj.zeros([10, 1]);
+  let vec = nj.zeros([10, 1], "float32");
   vec.set(j, 0, 1.0);
   return vec;
 }

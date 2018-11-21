@@ -31,11 +31,22 @@ export function argmax(array: number[]): number {
 }
 
 /**
+ * Generates n random numbers drawn from a normal distribution N(0, 1)
+ *
+ * @param n number of random numbers to generate
+ */
+function* generateRandomNumbers(n: number): Iterable<number> {
+    let count = 0;
+    while (n > count++) {
+      yield bm() as number;
+    }
+}
+
+/**
  * Return an x-by-y dimensional NDArray filled with random numbers
  * drawn from a normal distribution with mean 0 and unit variance
  */
 export function randn(x, y): nj.NdArray<number> {
-    return nj.array(Array.from(Array(x),
-                   () => Array.from(Array(y),
-                                    () => bm() as number)) as any);
+    let a = nj.array([...generateRandomNumbers(x * y)], "float32");
+    return (a as any).reshape(x, y);
 }

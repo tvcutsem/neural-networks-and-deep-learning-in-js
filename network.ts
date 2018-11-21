@@ -17,7 +17,7 @@ function sigmoid(z: nj.NdArray<number>) {
 /** the derivative of sigmoid */
 function sigmoidPrime(z: nj.NdArray<number>) {
     return sigmoid(z).multiply(
-                        nj.ones(z.shape)
+                        nj.ones(z.shape, z.dtype)
                         .subtract(sigmoid(z)));
 }
 
@@ -94,8 +94,8 @@ export class Network {
    * @param eta the learning rate
    */
   public updateMiniBatch(miniBatch: [nj.NdArray<number>, nj.NdArray<number>][], eta: number) {
-      let nablaB = this.biases.map(b => nj.zeros(b.shape));
-      let nablaW = this.weights.map(w => nj.zeros(w.shape));
+      let nablaB = this.biases.map(b => nj.zeros(b.shape, b.dtype));
+      let nablaW = this.weights.map(w => nj.zeros(w.shape, w.dtype));
       for (let [x, y] of miniBatch) {
           let [deltaNablaB, deltaNablaW] = this.backprop(x, y);
           nablaB = zip(nablaB, deltaNablaB).map(([nb, dnb]) => nb.add(dnb));
@@ -127,8 +127,8 @@ export class Network {
    * @param y expected output activations
    */
   private backprop(x: nj.NdArray<number>, y: nj.NdArray<number>): [nj.NdArray<number>[], nj.NdArray<number>[]] {
-      let nablaB = this.biases.map(b => nj.zeros(b.shape));
-      let nablaW = this.weights.map(w => nj.zeros(w.shape));
+      let nablaB = this.biases.map(b => nj.zeros(b.shape, b.dtype));
+      let nablaW = this.weights.map(w => nj.zeros(w.shape, w.dtype));
       // feedforward
       let activation = x;
       let activations = [x]; // list to store all activations, layer-by-layer
